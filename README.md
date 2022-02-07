@@ -13,7 +13,7 @@ vulnerable thirdparty js files. This is mainly what I look for when checking the
 
 And of course attached eventlisteners can also exist in script tags on normal pages:
 
-`cat hosts | hakcrawler -plain | httpx --match-regex "addEventListener\((?:'|\")message(?:'|\")"`
+`cat hosts | hakrawler -plain | httpx --match-regex "addEventListener\((?:'|\")message(?:'|\")"`
 
 <h1>Method</h1>
 With these results, we can start checking the pages. I mainly use https://github.com/fransr/postMessage-tracker on chrome to sift through pages. It tells where the scripts come from in the top corner and prints all transfering messages in the console. 
