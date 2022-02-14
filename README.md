@@ -28,9 +28,9 @@ Tomnomnom brings up some valuable tips on how to work on postmessage XSS on STÖ
 Some key take aways is how valuable the chrome debugger is, open your console -> go to the sources tab -> Global Listeners -> message. That's all the registered
 message eventlisteners on the page. 
 
-Put a breakpoint at the listener and shoot `window.PostMessage('test', '*')` in your console and see where it goes from the breakpoint. The fun sport is to try to please the if()'s and regexes until it hits a sink or similar.
+Put a breakpoint at the listener and shoot `window.postMessage('test', '*')` in your console and see where it goes from the breakpoint. The fun sport is to try to please the if()'s and regexes until it hits a sink or similar.
 
-If the window.PostMessage() pops from your console, and the origin isn't properly checked(The boring part that prevents exploitability many times), make a post on
+If the window.postMessage() pops from your console, and the origin isn't properly checked(The boring part that prevents exploitability many times), make a post on
 https://repl.it like Tomnomnom suggests, with the following template code:
 
 ```
