@@ -5,7 +5,7 @@ I suggest reading writeups on eventlistener XSS before getting into this, since 
 <h1>Recon</h1>
 Initially, I look for this regex in all the included js with this regex:
 
-`cat hosts | getJS | grep target.com | httpx --match-regex "addEventListener\((?:'|\")message(?:'|\")"`
+`cat hosts | getJS | grep target.com |  httpx --match-regex "(?i)addEventListener\((?:'|\")message(?:'|\")"`
 
 `grep target.com` will narrow the results to not include public static CDN servers. These are maintained and hard to exploit.
 However if the target have their own private content delivery on e.g. static.target.com it may not be as well maintained and hold
